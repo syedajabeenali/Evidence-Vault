@@ -485,9 +485,11 @@ $RECYCLE.BIN/
 *.swp
 
 # Ignore Visual Studio specific files
-.vscode/
-*.vs/
+.vs/
 *.user
+*.suo
+*.cache
+*.log
 
 # Ignore build directories
 bin/
@@ -497,3 +499,15 @@ Migrations/
 # Ignore logs and temp files
 *.log
 *.tmp
+
+# Ignore sensitive configuration files
+appsettings.Development.json
+appsettings.json
+secrets.json
+
+# Ignore launch settings
+Properties/launchSettings.json
+
+# Dependency folders
+node_modules/
+packages/
