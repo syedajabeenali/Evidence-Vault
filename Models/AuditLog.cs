@@ -7,10 +7,10 @@ namespace EvidenceVault.Models
     public class AuditLog
     {
         [Key]
-        public int LogID { get; set; } 
+        public int LogID { get; set; }
 
-        [ForeignKey("User")]
-        public int? UserID { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public string? UserID { get; set; }
 
         [ForeignKey("Evidence")]
         public int EvidenceID { get; set; }
@@ -22,7 +22,7 @@ namespace EvidenceVault.Models
         public DateTime Timestamp { get; set; } = DateTime.Now;
 
         // Navigation properties 
-        public virtual User User { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual Evidence Evidence { get; set; }
     }
 }

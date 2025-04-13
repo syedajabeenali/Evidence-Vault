@@ -15,12 +15,12 @@ namespace EvidenceVault.Models
 
         public string Description { get; set; }
 
-        [ForeignKey("User")]
-        public int CreatedBy { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public string CreatedBy { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         // Navigation Property
-        public virtual User User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

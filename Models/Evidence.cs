@@ -12,8 +12,8 @@ namespace EvidenceVault.Models
         [ForeignKey("Case")]
         public int CaseID { get; set; }
 
-        [ForeignKey("User")]
-       public int? UploadedBy { get; set; }
+        [ForeignKey("ApplicationUser")]
+       public string? UploadedBy { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -32,6 +32,6 @@ namespace EvidenceVault.Models
         // Navigation Properties
         public virtual Case Case { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

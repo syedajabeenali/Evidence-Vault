@@ -11,8 +11,8 @@ namespace EvidenceVault.Models
         [ForeignKey("Case")]
         public int CaseID { get; set; } 
 
-        [ForeignKey("User")]
-        public int? GeneratedBy { get; set; } 
+        [ForeignKey("ApplicationUser")]
+        public string? GeneratedBy { get; set; } 
 
         [Required]
         [MaxLength(500)]
@@ -23,11 +23,11 @@ namespace EvidenceVault.Models
         public bool IsDeleted { get; set; } = false;
 
         [ForeignKey("DeletedBy")]
-        public User? DeletedByUser { get; set; }
+        public ApplicationUser? DeletedByUser { get; set; }
         public DateTime DeletedAt { get; set; }  = DateTime.Now;
 
         // Navigation properties 
         public virtual Case Case { get; set; }
-        public virtual User User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
