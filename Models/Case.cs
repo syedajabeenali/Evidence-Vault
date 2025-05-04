@@ -15,7 +15,7 @@ namespace EvidenceVault.Models
 
         public string Description { get; set; }
 
-        [ForeignKey("ApplicationUser")]
+        [ForeignKey(nameof(User))]
         public string CreatedBy { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
